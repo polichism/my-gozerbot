@@ -6,7 +6,7 @@
 # License: BSD
 
 from generic import istr
-import tarfile, os, types, cStringIO, bz2, gzip
+import tarfile, os, types, cStringIO, gzip
 
 def tarextract(package, fileobj=None, prefix=None, base=None):
     '''
@@ -41,8 +41,6 @@ def tarextract(package, fileobj=None, prefix=None, base=None):
         del fileobj
     return extracted
 
-def bunzip2(fileobj):
-    return bz2.decompress(fileobj)
 
 def gunzip(fileobj):
     if type(fileobj) == types.StringType or isinstance(fileobj, istr):
